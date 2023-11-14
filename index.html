@@ -1,13 +1,394 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>Hello</title>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --body-background: black;
+        --main-text-color: rgba(110, 12, 12, 1);
+        --eye-background-radial: radial-gradient(
+          circle,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(110, 12, 12, 1) 39%,
+          rgba(75, 8, 8, 1) 60%,
+          rgba(0, 0, 0, 1) 100%
+        );
+        --eye-border-color: black;
+      }
 
-<h1>Hello World</h1>
+      * {
+        font-family: "Roboto", sans-serif;
+      }
 
-</body>
+      body {
+        margin: 0;
+        background: var(--body-background);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        mix-blend-mode: lighten;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        overflow-y: scroll;
+        overflow-x: hidden;
+      }
+
+      body::-webkit-scrollbar {
+        display: none;
+      }
+
+      .container {
+        width: 100%;
+        text-align: center;
+      }
+
+      .line-container {
+        padding: 100px;
+      }
+
+      .line-container > .text {
+        text-align: left;
+      }
+
+      .line-container > .line {
+        height: 5px;
+        border-radius: 50%;
+        background-color: black;
+        box-shadow: 0 0 10px 5px rgba(110, 12, 12, 1);
+      }
+
+      .line > .text {
+        position: relative;
+        top: -50px;
+        text-align: left;
+      }
+
+      .text {
+        padding: 10px;
+        color: var(--main-text-color);
+        text-shadow: 0 0 10px rgba(110, 12, 12, 1), 0 0 10px black,
+          0 0 10px black, 0 0 10px rgba(110, 12, 12, 1);
+        text-align: center;
+        font-size: 24px;
+        bottom: 100px;
+        display: none;
+        margin-top: 40px;
+      }
+
+      .mangekyou-sharingan {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        flex-flow: row wrap;
+      }
+
+      .eye-container {
+        padding: 20px;
+      }
+
+      .circle {
+        border-radius: 50%;
+      }
+
+      .eye {
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border: 2px solid var(--eye-border-color);
+        transition: 0.3s;
+        opacity: 0.9;
+        background: var(--eye-background-radial);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .eye::after {
+        position: absolute;
+        content: "";
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: black;
+      }
+
+      .eye > .inner-eye {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 3px solid black;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .tag-container {
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+      }
+
+      .tag {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        margin-bottom: 120px;
+        background-color: black;
+      }
+
+      .tag::after {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 20px;
+        border: 10px solid black;
+        border-radius: 50%;
+        border-top: none;
+        border-right: none;
+        border-bottom: none;
+        left: 3px;
+        top: -5px;
+        margin-bottom: 120px;
+        background-color: transparent;
+      }
+
+      .glare {
+        z-index: 100;
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        opacity: 0.4;
+        left: 20px;
+        top: 20px;
+        background: rgb(255, 255, 255);
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(255, 255, 255, 0.5046393557422969) 45%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+
+      .glare::after {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 20px;
+        opacity: 0.5;
+        left: 65px;
+        top: 60px;
+        border-radius: 50%;
+        background: rgb(255, 255, 255);
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(255, 255, 255, 0.5046393557422969) 45%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+
+      .glare::before {
+        position: absolute;
+        content: "";
+        width: 50px;
+        height: 50px;
+        opacity: 0.3;
+        left: 100px;
+        top: 100px;
+        border-radius: 50%;
+        background: rgb(255, 255, 255);
+        background: linear-gradient(
+          225deg,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(255, 255, 255, 0.5046393557422969) 45%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+
+      .eye:hover {
+        z-index: 1;
+        box-shadow: 0 0 100px rgb(201, 13, 13);
+        animation: scale 0.3s ease-in-out, glow 0.5s ease-in-out;
+        transform: scale(1.1);
+        opacity: 1;
+        mix-blend-mode: lighten;
+      }
+
+      .eye:hover .inner-eye {
+        animation: rotation 2.5s ease-in-out 0.4s;
+      }
+
+      .eye-and-reflection-container {
+        height: 300px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .eye-and-reflection-container:hover {
+        height: 400px;
+        padding: 40px;
+        -webkit-box-reflect: below -365px -webkit-gradient(
+            linear,
+            right top,
+            right bottom,
+            from(transparent),
+            to(rgba(255, 255, 255, 0.5))
+          );
+      }
+
+      .eye:active {
+        box-shadow: none;
+        animation: none;
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      .owner-info {
+        padding-top: 40px;
+      }
+
+      .owner-info > .text {
+        text-align: left;
+        font-size: 15px;
+      }
+
+      @keyframes glow {
+        0% {
+          box-shadow: 0 0 0 rgb(201, 13, 13);
+        }
+        100% {
+          box-shadow: 0 0 100px rgb(201, 13, 13);
+        }
+      }
+
+      @keyframes scale {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1.1);
+        }
+      }
+
+      @keyframes rotation {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(720deg);
+        }
+      }
+      .itachi-eye {
+        overflow: hidden;
+        background: radial-gradient(
+          circle,
+          rgba(110, 12, 12, 1) 0%,
+          rgba(110, 12, 12, 1) 39%,
+          rgba(75, 8, 8, 1) 60%,
+          rgba(0, 0, 0, 1) 100%
+        );
+      }
+
+      .itachi-eye::after {
+        box-shadow: 0 0 20px rgb(143, 19, 19);
+        background: rgb(143, 19, 19);
+      }
+
+      .itachi-eye > .inner-eye {
+        border: none;
+        background: transparent;
+        width: 80px;
+        height: 80px;
+      }
+
+      .itachi-eye > .inner-eye > .tag-container > .tag {
+        top: -60px;
+        background-color: transparent;
+        width: 200px;
+        height: 110px;
+        border-radius: 0;
+        overflow: hidden;
+        transform-origin: 100px 100px;
+      }
+
+      .itachi-eye > .inner-eye > .tag-container > .tag::after {
+        border-left: 50px solid black;
+        top: 1px;
+        left: 82px;
+        width: 300px;
+        height: 160px;
+      }
+
+      .itachi-eye > .inner-eye > .tag-container:nth-child(1) {
+        transform: rotate(-30deg);
+      }
+
+      .itachi-eye > .inner-eye > .tag-container:nth-child(2) {
+        transform: rotate(90deg);
+      }
+
+      .itachi-eye > .inner-eye > .tag-container:nth-child(3) {
+        transform: rotate(210deg);
+      }
+    </style>
+  </head>
+  <body>
+    <audio
+      src="https://res.cloudinary.com/dcqggnzbv/video/upload/v1685970635/sharingan%20codepen/sharingan-sfx_iusmep.mp3"
+      autoplay
+    ></audio>
+
+    <div class="container">
+      <div class="mangekyou-sharingan">
+        <div class="eye-and-reflection-container">
+          <div
+            class="eye-container"
+            onmouseover="toggleVisibility()"
+            onmouseout="toggleVisibility()"
+          >
+            <div class="eye circle itachi-eye">
+              <div class="glare circle"></div>
+              <div class="inner-eye circle">
+                <div class="tag-container">
+                  <div class="tag circle"></div>
+                </div>
+                <div class="tag-container">
+                  <div class="tag circle"></div>
+                </div>
+                <div class="tag-container">
+                  <div class="tag circle"></div>
+                </div>
+              </div>
+            </div>
+            <div id="personalInformation" class="text">
+              <h3>Sajib Sarker</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function toggleVisibility() {
+        var element = document.getElementById("personalInformation");
+        if (element.style.display === "none" || element.style.display === "") {
+          element.style.display = "block";
+        } else {
+          element.style.display = "none";
+        }
+      }
+      var hoverableElement = document.getElementById("personalInformation");
+      hoverableElement.addEventListener("mouseenter", toggleVisibility);
+      hoverableElement.addEventListener("mouseleave", toggleVisibility);
+    </script>
+  </body>
 </html>
-
-
