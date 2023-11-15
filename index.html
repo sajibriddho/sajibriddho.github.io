@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title> - Burn Fire Itself</title>
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/TqRZybk/7d10365e-2533-4382-bcf6-b5cf7122f68b.png">
     <style>
       :root {
         --body-background: black;
         --main-text-color: rgba(110, 12, 12, 1);
-        --eye-background-radial: radial-gradient(
-          circle,
-          rgba(0, 0, 0, 1) 0%,
-          rgba(110, 12, 12, 1) 39%,
-          rgba(75, 8, 8, 1) 60%,
-          rgba(0, 0, 0, 1) 100%
-        );
+        --eye-background-radial: radial-gradient(circle,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(110, 12, 12, 1) 39%,
+            rgba(75, 8, 8, 1) 60%,
+            rgba(0, 0, 0, 1) 100%);
         --eye-border-color: black;
       }
 
@@ -49,18 +49,18 @@
         padding: 100px;
       }
 
-      .line-container > .text {
+      .line-container>.text {
         text-align: left;
       }
 
-      .line-container > .line {
+      .line-container>.line {
         height: 5px;
         border-radius: 50%;
         background-color: black;
         box-shadow: 0 0 10px 5px rgba(110, 12, 12, 1);
       }
 
-      .line > .text {
+      .line>.text {
         position: relative;
         top: -50px;
         text-align: left;
@@ -118,7 +118,7 @@
         background-color: black;
       }
 
-      .eye > .inner-eye {
+      .eye>.inner-eye {
         position: absolute;
         width: 120px;
         height: 120px;
@@ -172,12 +172,10 @@
         left: 20px;
         top: 20px;
         background: rgb(255, 255, 255);
-        background: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 1) 0%,
-          rgba(255, 255, 255, 0.5046393557422969) 45%,
-          rgba(0, 0, 0, 0) 100%
-        );
+        background: linear-gradient(135deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0.5046393557422969) 45%,
+            rgba(0, 0, 0, 0) 100%);
       }
 
       .glare::after {
@@ -190,12 +188,10 @@
         top: 60px;
         border-radius: 50%;
         background: rgb(255, 255, 255);
-        background: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 1) 0%,
-          rgba(255, 255, 255, 0.5046393557422969) 45%,
-          rgba(0, 0, 0, 0) 100%
-        );
+        background: linear-gradient(135deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0.5046393557422969) 45%,
+            rgba(0, 0, 0, 0) 100%);
       }
 
       .glare::before {
@@ -208,12 +204,10 @@
         top: 100px;
         border-radius: 50%;
         background: rgb(255, 255, 255);
-        background: linear-gradient(
-          225deg,
-          rgba(255, 255, 255, 1) 0%,
-          rgba(255, 255, 255, 0.5046393557422969) 45%,
-          rgba(0, 0, 0, 0) 100%
-        );
+        background: linear-gradient(225deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0.5046393557422969) 45%,
+            rgba(0, 0, 0, 0) 100%);
       }
 
       .eye:hover {
@@ -237,13 +231,11 @@
       .eye-and-reflection-container:hover {
         height: 400px;
         padding: 40px;
-        -webkit-box-reflect: below -365px -webkit-gradient(
-            linear,
+        -webkit-box-reflect: below -365px -webkit-gradient(linear,
             right top,
             right bottom,
             from(transparent),
-            to(rgba(255, 255, 255, 0.5))
-          );
+            to(rgba(255, 255, 255, 0.5)));
       }
 
       .eye:active {
@@ -257,7 +249,7 @@
         padding-top: 40px;
       }
 
-      .owner-info > .text {
+      .owner-info>.text {
         text-align: left;
         font-size: 15px;
       }
@@ -266,6 +258,7 @@
         0% {
           box-shadow: 0 0 0 rgb(201, 13, 13);
         }
+
         100% {
           box-shadow: 0 0 100px rgb(201, 13, 13);
         }
@@ -275,6 +268,7 @@
         0% {
           transform: scale(1);
         }
+
         100% {
           transform: scale(1.1);
         }
@@ -284,19 +278,19 @@
         0% {
           transform: rotate(0deg);
         }
+
         100% {
           transform: rotate(720deg);
         }
       }
+
       .itachi-eye {
         overflow: hidden;
-        background: radial-gradient(
-          circle,
-          rgba(110, 12, 12, 1) 0%,
-          rgba(110, 12, 12, 1) 39%,
-          rgba(75, 8, 8, 1) 60%,
-          rgba(0, 0, 0, 1) 100%
-        );
+        background: radial-gradient(circle,
+            rgba(110, 12, 12, 1) 0%,
+            rgba(110, 12, 12, 1) 39%,
+            rgba(75, 8, 8, 1) 60%,
+            rgba(0, 0, 0, 1) 100%);
       }
 
       .itachi-eye::after {
@@ -304,14 +298,14 @@
         background: rgb(143, 19, 19);
       }
 
-      .itachi-eye > .inner-eye {
+      .itachi-eye>.inner-eye {
         border: none;
         background: transparent;
         width: 80px;
         height: 80px;
       }
 
-      .itachi-eye > .inner-eye > .tag-container > .tag {
+      .itachi-eye>.inner-eye>.tag-container>.tag {
         top: -60px;
         background-color: transparent;
         width: 200px;
@@ -321,7 +315,7 @@
         transform-origin: 100px 100px;
       }
 
-      .itachi-eye > .inner-eye > .tag-container > .tag::after {
+      .itachi-eye>.inner-eye>.tag-container>.tag::after {
         border-left: 50px solid black;
         top: 1px;
         left: 82px;
@@ -329,33 +323,32 @@
         height: 160px;
       }
 
-      .itachi-eye > .inner-eye > .tag-container:nth-child(1) {
+      .itachi-eye>.inner-eye>.tag-container:nth-child(1) {
         transform: rotate(-30deg);
       }
 
-      .itachi-eye > .inner-eye > .tag-container:nth-child(2) {
+      .itachi-eye>.inner-eye>.tag-container:nth-child(2) {
         transform: rotate(90deg);
       }
 
-      .itachi-eye > .inner-eye > .tag-container:nth-child(3) {
+      .itachi-eye>.inner-eye>.tag-container:nth-child(3) {
         transform: rotate(210deg);
       }
     </style>
   </head>
+
   <body>
-    <audio
-      src="https://res.cloudinary.com/dcqggnzbv/video/upload/v1685970635/sharingan%20codepen/sharingan-sfx_iusmep.mp3"
-      autoplay
-    ></audio>
+    <audio id="myAudio" autoplay="autoplay">
+      <source
+        src="https://res.cloudinary.com/dcqggnzbv/video/upload/v1685970635/sharingan%20codepen/sharingan-sfx_iusmep.mp3"
+        type="">
+    </audio>
 
     <div class="container">
       <div class="mangekyou-sharingan">
         <div class="eye-and-reflection-container">
-          <div
-            class="eye-container"
-            onmouseover="toggleVisibility()"
-            onmouseout="toggleVisibility()"
-          >
+          <div class="eye-container redirect-link" onclick="playAudio()" onmouseover="toggleVisibility()"
+            onmouseout="toggleVisibility()">
             <div class="eye circle itachi-eye">
               <div class="glare circle"></div>
               <div class="inner-eye circle">
@@ -371,12 +364,14 @@
               </div>
             </div>
             <div id="personalInformation" class="text">
-              <h3>Sajib Sarker</h3>
+              ちょっと、そこ
             </div>
           </div>
         </div>
       </div>
+      <br>
     </div>
+
     <script>
       function toggleVisibility() {
         var element = document.getElementById("personalInformation");
@@ -390,5 +385,18 @@
       hoverableElement.addEventListener("mouseenter", toggleVisibility);
       hoverableElement.addEventListener("mouseleave", toggleVisibility);
     </script>
+    <script>
+      var element = document.querySelector('.redirect-link');
+      element.addEventListener('click', function () {
+        window.open('https://www.linkedin.com/in/sajibriddho/', '_blank');
+      });
+    </script>
+    <script>
+      function playAudio() {
+        var audio = document.getElementById("myAudio");
+        audio.play();
+      }
+    </script>
   </body>
+
 </html>
